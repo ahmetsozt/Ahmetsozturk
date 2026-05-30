@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<style data-omelette-injected>html,body{background:transparent}</style><script data-omelette-injected>(()=>{var j=[];var x=false;var S=30000;var f=3000;document.addEventListener("DOMContentLoaded",()=>{const H=window.Babel;const G="om-src-id";if(H&&H.registerPlugin&&!(H.availablePlugins&&H.availablePlugins[G])){H.registerPlugin(G,({types:Y})=>({visitor:{JSXOpeningElement(U,Q){const J=U.node;if(J.name&&J.name.type==="JSXMemberExpression")return;for(let V=0;V<J.attributes.length;V++){const L=J.attributes[V];if(L.type==="JSXAttribute"&&L.name&&L.name.name==="data-om-id")return}const W=Q.file&&Q.file.opts&&Q.file.opts.filename||"?";const Z=J.loc&&J.loc.start;const z=`jsx:${W}:${J.start??0}:${Z?Z.line:0}:${Z?Z.column+1:0}`;J.attributes.push(Y.jsxAttribute(Y.jsxIdentifier("data-om-id"),Y.stringLiteral(z)))}}}))}const k="om-text-extract";let A=false;if(x&&H&&H.registerPlugin&&!(H.availablePlugins&&H.availablePlugins[k])){const Y=window.React;if(Y&&Y.useSyncExternalStore&&Y.createElement){A=true;const U={};const Q=new Set;let J=0;window.__omTextO=U;window.__omTextSet=(z)=>{for(const V in z){const L=z[V];if(L==null)delete U[V];else U[V]=L}J++;Q.forEach((V)=>V())};const W=(z)=>{Q.add(z);return()=>Q.delete(z)};const Z=()=>J;window.__OmT=function z(V){Y.useSyncExternalStore(W,Z,Z);return Y.createElement("span",{"data-om-text":V.i,className:"__om-t"},V.i in U?U[V.i]:V.children)};H.registerPlugin(k,({types:z})=>{const V={style:1,script:1,noscript:1,textarea:1,title:1,option:1,text:1,tspan:1,textPath:1};const L={placeholder:1,alt:1,title:1,label:1,"aria-label":1,"aria-description":1,"aria-placeholder":1};const _=($,C)=>z.logicalExpression("??",z.memberExpression(z.logicalExpression("||",z.memberExpression(z.identifier("window"),z.identifier("__omTextO")),z.objectExpression([])),z.stringLiteral($),true),C);const E=($)=>$.file&&$.file.opts&&$.file.opts.filename||"?";const B=($)=>$.file&&$.file.code||"";const b=($,C)=>{const X=(F)=>F&&F.start!=null&&F.end!=null&&(F.type==="StringLiteral"||F.type==="TemplateLiteral"&&F.expressions.length===0)?[F.start,F.end]:null;const N=X(C);if(N)return N;if(C&&C.type==="Identifier"){const F=$.scope.getBinding(C.name);if(F&&F.constant&&F.path.node.type==="VariableDeclarator"){return X(F.path.node.init)}}return null};const M=($,C,X)=>{const N=$.node;let F=false;const w=(K,q)=>{F=true;return z.jsxElement(z.jsxOpeningElement(z.jsxIdentifier("__OmT"),[z.jsxAttribute(z.jsxIdentifier("i"),z.stringLiteral(K))],false),z.jsxClosingElement(z.jsxIdentifier("__OmT")),[q],false)};const D=N.children.map((K)=>{if(K.type==="JSXText"){if(K.start==null||K.end==null)return K;const q=X.slice(K.start,K.end);const R=q.length-q.trimStart().length;const m=q.length-q.trimEnd().length;if(R+m>=q.length)return K;return w(`txt:${C}:${K.start+R}:${K.end-m}`,K)}if(K.type==="JSXExpressionContainer"){const q=b($,K.expression);if(q)return w(`str:${C}:${q[0]}:${q[1]}`,K)}return K});if(F)N.children=D};return{visitor:{JSXOpeningElement($,C){const X=$.node;const N=E(C);const F={};for(let w=0;w<X.attributes.length;w++){const D=X.attributes[w];if(D.type!=="JSXAttribute"||!D.name)continue;const K=D.name.name;if(!L[K])continue;if(!D.value||D.value.type!=="StringLiteral")continue;if(D.value.start==null||D.value.end==null)continue;const q=`txt:${N}:${D.value.start}:${D.value.end}`;F[K]=q;D.value=z.jsxExpressionContainer(_(q,z.stringLiteral(D.value.value)))}if(Object.keys(F).length){X.attributes.push(z.jsxAttribute(z.jsxIdentifier("data-om-text-attrs"),z.stringLiteral(JSON.stringify(F))))}},JSXElement($,C){const X=$.node.openingElement;const N=X&&X.name&&X.name.name;if(N==="__OmT")return;if(typeof N==="string"&&V[N])return;M($,E(C),B(C))},JSXFragment($,C){M($,E(C),B(C))}}}})}}const u=A?["transform-react-jsx-source",G,k]:["transform-react-jsx-source",G];document.querySelectorAll('script[type="text/babel"],script[type="text/jsx"]').forEach((Y,U)=>{const Q=Y.getAttribute("data-plugins")||"";const J=u.filter((W)=>Q.indexOf(W)<0);if(J.length){Y.setAttribute("data-plugins",Q?`${Q},${J.join(",")}`:J.join(","))}if(!Y.hasAttribute("data-filename")){Y.setAttribute("data-filename",Y.getAttribute("src")||`inline-${U}`)}})});var y=window.parent;if(y&&y!==window){const H=(Q,J)=>{try{y.postMessage({__omelette_log:true,type:Q,data:J},"*")}catch{}};["log","warn","error"].forEach((Q)=>{const J=console[Q];console[Q]=(...W)=>{const Z=W.map((z)=>{try{return typeof z==="object"?JSON.stringify(z):String(z)}catch{try{return String(z)}catch{return"[unstringifiable]"}}}).join(" ");H(Q,Z);J.apply(console,W)}});window.addEventListener("error",(Q)=>{const J=Q.target;if(J&&J!==window&&J.tagName){const W=J.src||J.href||"";H("resource_error",`${J.tagName} failed to load: ${W}`)}else{H("error",`${Q.message||"Unknown error"} at ${Q.filename||"?"}:${Q.lineno||0}:${Q.colno||0}`)}},true);window.addEventListener("unhandledrejection",(Q)=>{const J=Q.reason;const W=J instanceof Error?`${J.message} ${J.stack}`:String(J);H("error",`Unhandled rejection: ${W}`)});const G=()=>{try{y.postMessage({type:"omelette:height",height:document.documentElement.scrollHeight},"*")}catch{}};if(document.readyState==="complete")G();else window.addEventListener("load",G);if(window.ResizeObserver)new ResizeObserver(G).observe(document.documentElement);const k={};let A=0;window.claude={complete(Q){return new Promise((J,W)=>{if(!j.length){W(new Error("claude.complete: no parent origin"));return}const Z=`c${++A}`;const z=()=>setTimeout(()=>{delete k[Z];W(new Error(`claude.complete: no data for ${S/1000}s`))},S);const V=z();k[Z]={resolve:J,reject:W,text:"",t:V,arm:z};try{for(const L of j){y.postMessage({__om_api:true,id:Z,body:Q},L)}}catch(L){clearTimeout(V);delete k[Z];W(L)}})}};const u={};let Y=0;window.omelette={writeFile:(Q,J)=>new Promise((W,Z)=>{if(!j.length){W();return}const z=`f${++Y}`;const V=setTimeout(()=>{delete u[z];W()},f);u[z]={resolve:W,reject:Z,t:V};try{for(const L of j){y.postMessage({__om_file:true,id:z,op:"write",path:Q,content:J},L)}}catch{clearTimeout(V);delete u[z];W()}})};const U=(Q)=>{try{return JSON.stringify(Q)}catch{return JSON.stringify(String(Q))}};window.addEventListener("message",(Q)=>{if(j.indexOf(Q.origin)<0)return;if(Q.source!==y)return;const J=Q.data;if(!J)return;if(J.type==="omelette-preview-refresh"){if(typeof J.token!=="string"||!/^[0-9a-f.-]+(\.(rc|pr-[0-9]+))?(\.[0-9]+\.[0-9a-f]{16})?$/.test(J.token))return;const z=Math.max(1,Math.floor((J.expiresAt||0)-Date.now()/1000));document.cookie="__Host-omelette-preview="+J.token+"; Path=/; Secure; SameSite=None; Partitioned; Max-Age="+z;return}if(J.__om_file_r){const z=u[J.id];if(!z)return;clearTimeout(z.t);delete u[J.id];if(J.ok)z.resolve();else z.reject(new Error(J.error||"write failed"));return}if(J.__om_api_r){const z=k[J.id];if(!z)return;if(J.error!=null){clearTimeout(z.t);delete k[J.id];z.reject(new Error(J.error));return}if(J.chunk!=null){clearTimeout(z.t);z.t=z.arm();z.text+=J.chunk;return}if(J.done){clearTimeout(z.t);delete k[J.id];z.resolve(J.text!=null?J.text:z.text);return}return}if(!J.__om_eval)return;const W=J;const Z=(z)=>{Q.source.postMessage({...z,__om_eval_r:1,id:W.id},Q.origin)};try{const z=(0,eval)(W.code);if(z&&typeof z.then==="function"){z.then((V)=>Z({ok:1,v:U(V)}),(V)=>Z({ok:0,e:String(V)}))}else{Z({ok:1,v:U(z)})}}catch(z){Z({ok:0,e:String(z)})}})}})();
+</script>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ahmet S. Ozturk — Investment Professional | Dubai Real Estate &amp; Quant/AI Trading</title>
+<meta name="description" content="Ahmet S. Ozturk — investment-minded real estate professional specializing in Dubai off-plan &amp; secondary residential property and quant/AI trading. ROI- and risk-based capital allocation for Turkish-speaking and international investors." />
+<meta name="keywords" content="Ahmet S. Ozturk, Ahmet Ozturk, Dubai real estate, off-plan Dubai, secondary residential, real estate consultant Dubai, investment professional, ROI advisory, quant trading, AI trading, NUUK, Turkish investors Dubai, D&amp;B Properties" />
+<meta name="author" content="Ahmet S. Ozturk" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#171b2c" />
+<link rel="canonical" href="https://ahmetsozturk.com/" />
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+<link rel="apple-touch-icon" href="assets/favicon.svg" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="profile" />
+<meta property="og:url" content="https://ahmetsozturk.com/" />
+<meta property="og:site_name" content="Ahmet S. Ozturk" />
+<meta property="og:title" content="Ahmet S. Ozturk — Investment Professional | Dubai Real Estate &amp; Quant/AI Trading" />
+<meta property="og:description" content="Investment-minded real estate professional specializing in Dubai off-plan &amp; secondary residential property and quant/AI trading. ROI- and risk-based capital allocation for Turkish-speaking and international investors." />
+<meta property="og:image" content="https://ahmetsozturk.com/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Ahmet S. Ozturk — Investment Professional, Dubai" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="profile:first_name" content="Ahmet" />
+<meta property="profile:last_name" content="Ozturk" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Ahmet S. Ozturk — Investment Professional | Dubai Real Estate &amp; Quant/AI Trading" />
+<meta name="twitter:description" content="Dubai off-plan &amp; secondary real estate, ROI- and risk-based advisory, and quant/AI trading for international investors." />
+<meta name="twitter:image" content="https://ahmetsozturk.com/assets/og-image.png" />
+
+<!-- Structured data: Person -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Ahmet S. Ozturk",
+  "givenName": "Ahmet",
+  "familyName": "Ozturk",
+  "url": "https://ahmetsozturk.com/",
+  "image": "https://ahmetsozturk.com/assets/og-image.png",
+  "jobTitle": "Investment Professional — Dubai Real Estate & Quant/AI Trading",
+  "email": "mailto:ahmetsahinozturk@hotmail.com",
+  "telephone": "+971586884464",
+  "knowsLanguage": ["en", "tr"],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Dubai",
+    "addressCountry": "AE"
+  },
+  "worksFor": {
+    "@type": "Organization",
+    "name": "NUUK"
+  },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Seneca College of Applied Arts and Technology"
+  },
+  "knowsAbout": ["Dubai Real Estate", "Off-Plan Property", "ROI Analysis", "Risk Management", "Quantitative Trading", "AI Trading", "FX & Gold Markets"],
+  "sameAs": ["https://www.linkedin.com/in/ahmetsozturk/"]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Hanken+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script src="assets/image-slot.js"></script>
+<style>
+  :root {
+    /* palette — modern midnight indigo with a vibrant blue→violet signature */
+    --bg:        oklch(0.185 0.028 266);
+    --bg-2:      oklch(0.235 0.034 266);
+    --bg-3:      oklch(0.295 0.040 266);
+    --line:      oklch(0.42 0.045 266);
+    --line-soft: oklch(0.33 0.038 266);
+    --text:      oklch(0.97 0.012 266);
+    --text-2:    oklch(0.80 0.025 266);
+    --text-3:    oklch(0.63 0.035 266);
+    --accent:    oklch(0.70 0.175 258);
+    --accent-2:  oklch(0.70 0.205 308);
+    --accent-3:  oklch(0.80 0.145 200);
+    --grad:      linear-gradient(118deg, var(--accent) 0%, var(--accent-2) 100%);
+
+    --serif: "Spectral", Georgia, serif;
+    --sans: "Hanken Grotesk", system-ui, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, monospace;
+
+    --maxw: 1100px;
+    --pad-x: clamp(22px, 5vw, 64px);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* vibrant aurora glow + grain atmosphere */
+  body::before {
+    content: "";
+    position: fixed; inset: 0;
+    pointer-events: none; z-index: 0;
+    background:
+      radial-gradient(70% 50% at 82% -8%, oklch(0.70 0.205 308 / 0.22), transparent 60%),
+      radial-gradient(65% 55% at 8% 4%, oklch(0.70 0.175 258 / 0.20), transparent 58%),
+      radial-gradient(80% 60% at 50% 112%, oklch(0.80 0.145 200 / 0.12), transparent 60%);
+  }
+  body::after {
+    content: "";
+    position: fixed; inset: 0;
+    pointer-events: none; z-index: 1; opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding-left: var(--pad-x); padding-right: var(--pad-x); position: relative; z-index: 2; }
+
+  a { color: inherit; text-decoration: none; }
+
+  .mono { font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+
+  /* ---------- NAV ---------- */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+    backdrop-filter: blur(14px);
+    background: oklch(0.185 0.028 266 / 0.72);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.4s, background 0.4s;
+  }
+  nav.scrolled { border-bottom-color: var(--line-soft); }
+  .nav-inner {
+    max-width: var(--maxw); margin: 0 auto;
+    padding: 18px var(--pad-x);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .brand { font-family: var(--serif); font-size: 19px; font-weight: 500; letter-spacing: 0.01em; display: flex; align-items: center; gap: 10px; }
+  .brand .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--grad); display: inline-block; box-shadow: 0 0 12px oklch(0.70 0.19 280 / 0.7); }
+  .nav-links { display: flex; align-items: center; gap: 30px; }
+  .nav-links a {
+    font-size: 13.5px; color: var(--text-2); letter-spacing: 0.01em;
+    position: relative; padding: 4px 0; transition: color 0.25s;
+  }
+  .nav-links a::after {
+    content: ""; position: absolute; left: 0; bottom: -2px; height: 1px; width: 0;
+    background: var(--accent); transition: width 0.3s ease;
+  }
+  .nav-links a:hover { color: var(--text); }
+  .nav-links a:hover::after { width: 100%; }
+
+  .lang {
+    display: flex; align-items: center; border: 1px solid var(--line);
+    border-radius: 999px; overflow: hidden; font-family: var(--mono); font-size: 11px;
+  }
+  .lang button {
+    background: none; border: none; color: var(--text-3); cursor: pointer;
+    padding: 6px 12px; letter-spacing: 0.08em; transition: color 0.2s, background 0.2s; font-family: inherit;
+  }
+  .lang button.active { color: oklch(0.16 0.03 266); background: var(--grad); font-weight: 600; }
+
+  .nav-toggle { display: none; }
+
+  /* ---------- HERO ---------- */
+  header.hero { padding: 168px 0 96px; position: relative; }
+  .hero-grid { display: grid; grid-template-columns: 1fr auto; gap: clamp(36px, 6vw, 80px); align-items: center; }
+  .hero-eyebrow { display: flex; align-items: center; gap: 12px; margin-bottom: 26px; }
+  .hero-eyebrow .rule { height: 2px; width: 46px; background: var(--grad); border-radius: 2px; }
+  h1.name {
+    font-family: var(--serif); font-weight: 400;
+    font-size: clamp(46px, 8vw, 96px); line-height: 0.98; letter-spacing: -0.015em;
+    margin-bottom: 24px;
+  }
+  h1.name .light {
+    font-style: italic; font-weight: 300;
+    background: var(--grad); -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; color: transparent;
+  }
+  .hero-title { font-size: clamp(19px, 2.4vw, 24px); color: var(--text); font-weight: 500; margin-bottom: 18px; }
+  .hero-lead { font-size: clamp(16px, 1.8vw, 18.5px); color: var(--text-2); max-width: 52ch; margin-bottom: 36px; }
+  .hero-cta { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+  .btn {
+    font-family: var(--sans); font-size: 14.5px; font-weight: 500; letter-spacing: 0.01em;
+    padding: 13px 24px; border-radius: 999px; cursor: pointer; transition: all 0.25s; border: 1px solid var(--line);
+    display: inline-flex; align-items: center; gap: 9px; white-space: nowrap;
+  }
+  .btn.primary { background: var(--grad); color: oklch(0.16 0.03 266); border-color: transparent; box-shadow: 0 8px 28px oklch(0.65 0.19 275 / 0.35); font-weight: 600; }
+  .btn.primary:hover { filter: brightness(1.08); transform: translateY(-2px); box-shadow: 0 12px 34px oklch(0.65 0.19 275 / 0.45); }
+  .btn.ghost { color: var(--text); }
+  .btn.ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
+  .portrait-frame { position: relative; }
+  .portrait-frame .ring {
+    position: absolute; inset: -2px; border-radius: 22px;
+    background: var(--grad); z-index: 0; opacity: 0.85;
+  }
+  .portrait-frame image-slot {
+    position: relative; z-index: 1;
+    width: clamp(240px, 27vw, 326px); height: clamp(300px, 34vw, 408px);
+    display: block; border: none; border-radius: 20px; overflow: hidden;
+    background: var(--bg-2);
+    box-shadow: 0 26px 64px oklch(0.10 0.04 270 / 0.65), 0 0 56px oklch(0.66 0.18 282 / 0.22);
+  }
+  .portrait-cap { position: absolute; bottom: -32px; left: 2px; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.14em; color: var(--text-3); text-transform: uppercase; z-index: 2; }
+
+  /* ---------- SECTION SHELL ---------- */
+  section { padding: 80px 0; position: relative; }
+  .sec-head { display: flex; align-items: baseline; gap: 18px; margin-bottom: 52px; }
+  .sec-num { font-family: var(--mono); font-size: 13px; letter-spacing: 0.1em; font-weight: 500; background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+  .sec-title { font-family: var(--serif); font-weight: 400; font-size: clamp(28px, 4vw, 42px); letter-spacing: -0.01em; }
+  .sec-line { flex: 1; height: 1px; background: var(--line-soft); align-self: center; }
+
+  /* ---------- ABOUT ---------- */
+  .about-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: clamp(32px, 5vw, 72px); }
+  .about-body p { color: var(--text-2); font-size: 18px; margin-bottom: 20px; max-width: 60ch; }
+  .about-body p strong { color: var(--text); font-weight: 600; }
+  .stat-card { border-top: 1px solid var(--line); padding: 22px 0; }
+  .stat-card .num { font-family: var(--serif); font-size: 40px; line-height: 1; background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+  .stat-card .lbl { font-size: 14px; color: var(--text-2); margin-top: 8px; }
+
+  /* ---------- EXPERIENCE TIMELINE ---------- */
+  .timeline { position: relative; }
+  .job {
+    display: grid; grid-template-columns: 190px 1fr; gap: 36px;
+    padding: 30px 0; border-top: 1px solid var(--line-soft);
+    transition: background 0.3s;
+  }
+  .job:hover { background: linear-gradient(90deg, oklch(0.205 0.007 70 / 0.5), transparent 70%); }
+  .job-when { font-family: var(--mono); font-size: 12.5px; color: var(--text-3); letter-spacing: 0.04em; padding-top: 5px; }
+  .job-when .now { color: var(--accent); }
+  .job-role { font-family: var(--serif); font-size: 23px; font-weight: 500; }
+  .job-co { font-size: 15px; color: var(--accent); margin: 4px 0 14px; font-weight: 500; letter-spacing: 0.01em; }
+  .job-desc { color: var(--text-2); font-size: 16px; max-width: 64ch; }
+  .job-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  .tag { font-family: var(--mono); font-size: 11px; color: var(--text-2); border: 1px solid var(--line); padding: 4px 11px; border-radius: 999px; letter-spacing: 0.03em; }
+
+  /* role under a parent company (e.g. NUUK) */
+  .subrole { margin-top: 26px; padding-top: 20px; border-top: 1px dashed var(--line-soft); }
+  .subrole-title { font-family: var(--serif); font-size: 19px; font-weight: 500; color: var(--text); margin-bottom: 12px; display: flex; align-items: center; gap: 11px; }
+  .subrole-title::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--grad); flex: none; box-shadow: 0 0 10px oklch(0.70 0.19 280 / 0.6); }
+  .subrole-title .small { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; color: var(--accent); text-transform: uppercase; font-weight: 400; }
+
+  /* ---------- EDUCATION + CERTS ---------- */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 64px); }
+  .edu-item, .cert-item { padding: 22px 0; border-top: 1px solid var(--line-soft); }
+  .edu-deg { font-family: var(--serif); font-size: 20px; font-weight: 500; }
+  .edu-school { color: var(--accent); font-size: 14.5px; margin: 3px 0 6px; }
+  .edu-when { font-family: var(--mono); font-size: 12px; color: var(--text-3); }
+  .cert-item { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; }
+  .cert-name { font-size: 16.5px; color: var(--text); }
+  .cert-org { font-size: 13px; color: var(--text-2); margin-top: 2px; }
+  .cert-yr { font-family: var(--mono); font-size: 12px; color: var(--text-3); white-space: nowrap; }
+
+  /* ---------- SKILLS ---------- */
+  .skill-groups { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line-soft); border: 1px solid var(--line-soft); }
+  .skill-col { background: var(--bg); padding: 30px 28px; }
+  .skill-col h4 { font-family: var(--mono); font-size: 12px; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 18px; }
+  .skill-col ul { list-style: none; }
+  .skill-col li { font-size: 16px; color: var(--text-2); padding: 7px 0; border-bottom: 1px solid var(--line-soft); display: flex; align-items: center; gap: 10px; }
+  .skill-col li:last-child { border-bottom: 0; }
+  .skill-col li::before { content: ""; width: 4px; height: 4px; background: var(--accent); flex: none; }
+
+  /* ---------- PROJECTS ---------- */
+  .proj-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .proj-card {
+    border: 1px solid var(--line-soft); background: var(--bg-2); padding: 28px;
+    transition: transform 0.3s, border-color 0.3s, background 0.3s;
+    display: flex; flex-direction: column; min-height: 200px;
+  }
+  .proj-card:hover { transform: translateY(-4px); border-color: var(--accent); background: var(--bg-3); box-shadow: 0 16px 40px oklch(0.5 0.12 275 / 0.35); }
+  .proj-kicker { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+  .proj-kicker .idx { font-family: var(--mono); font-size: 12px; color: var(--text-3); }
+  .proj-kicker .arrow { color: var(--text-3); transition: color 0.3s, transform 0.3s; }
+  .proj-card:hover .arrow { color: var(--accent); transform: translate(3px, -3px); }
+  .proj-name { font-family: var(--serif); font-size: 22px; font-weight: 500; margin-bottom: 10px; }
+  .proj-desc { color: var(--text-2); font-size: 15.5px; flex: 1; }
+  .proj-meta { font-family: var(--mono); font-size: 11px; color: var(--accent); letter-spacing: 0.08em; margin-top: 18px; text-transform: uppercase; }
+
+  /* ---------- CONTACT ---------- */
+  #contact { padding-bottom: 60px; }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 64px); align-items: end; }
+  .contact-lead { font-family: var(--serif); font-size: clamp(28px, 4.5vw, 48px); font-weight: 400; line-height: 1.1; letter-spacing: -0.01em; }
+  .contact-lead .accent { color: var(--accent); font-style: italic; }
+  .contact-list { display: flex; flex-direction: column; gap: 2px; }
+  .contact-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 16px 0; border-top: 1px solid var(--line-soft); transition: padding 0.25s, color 0.25s;
+  }
+  .contact-row:hover { padding-left: 10px; }
+  .contact-row .k { font-family: var(--mono); font-size: 11.5px; color: var(--text-3); letter-spacing: 0.08em; text-transform: uppercase; }
+  .contact-row .v { font-size: 16px; color: var(--text); transition: color 0.25s; }
+  .contact-row:hover .v { color: var(--accent); }
+
+  footer { border-top: 1px solid var(--line-soft); padding: 30px 0; margin-top: 40px; }
+  .foot-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .foot-inner span { font-family: var(--mono); font-size: 11.5px; color: var(--text-3); letter-spacing: 0.05em; }
+
+  /* ---------- reveal: transform-only entrance — opacity is never touched, so content is ALWAYS visible even if animations don't tick ---------- */
+  @keyframes revealUp { from { transform: translateY(20px); } to { transform: none; } }
+  .reveal { animation: revealUp 0.7s cubic-bezier(.2,.7,.2,1) both; }
+  @media (prefers-reduced-motion: reduce) { .reveal { animation: none; } }
+
+  [data-en] { display: none; }
+  html[lang="en"] [data-tr] { display: none; }
+  html[lang="en"] [data-en] { display: revert; }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 880px) {
+    .nav-links { display: none; }
+    .hero-grid { grid-template-columns: 1fr; }
+    .portrait-frame { order: -1; }
+    .portrait-frame image-slot { width: 210px; height: 264px; }
+    .about-grid, .two-col, .proj-grid, .contact-grid { grid-template-columns: 1fr; }
+    .skill-groups { grid-template-columns: 1fr; }
+    .job { grid-template-columns: 1fr; gap: 8px; }
+    .job-when { padding-top: 0; }
+    .contact-grid { gap: 36px; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand"><span class="dot"></span>Ahmet S. Ozturk</a>
+    <div class="nav-links">
+      <a href="#about"><span data-tr>Hakkımda</span><span data-en>About</span></a>
+      <a href="#experience"><span data-tr>Deneyim</span><span data-en>Experience</span></a>
+      <a href="#education"><span data-tr>Eğitim</span><span data-en>Education</span></a>
+      <a href="#skills"><span data-tr>Yetkinlikler</span><span data-en>Skills</span></a>
+      <a href="#projects"><span data-tr>Projeler</span><span data-en>Projects</span></a>
+      <a href="#contact"><span data-tr>İletişim</span><span data-en>Contact</span></a>
+    </div>
+    <div class="lang" role="group" aria-label="Language">
+      <button id="lang-tr" class="active" onclick="setLang('tr')">TR</button>
+      <button id="lang-en" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow reveal">
+          <span class="rule"></span>
+          <span class="mono" data-tr>Dubai · Gayrimenkul &amp; Trading</span>
+          <span class="mono" data-en>Dubai · Real Estate &amp; Trading</span>
+        </div>
+        <h1 class="name reveal">Ahmet S.<br /><span class="light">Ozturk</span></h1>
+        <p class="hero-title reveal">
+          <span data-tr>Yatırım Profesyoneli — Dubai Gayrimenkul &amp; Kantitatif / AI Trading</span>
+          <span data-en>Investment Professional — Dubai Real Estate &amp; Quant / AI Trading</span>
+        </p>
+        <p class="hero-lead reveal">
+          <span data-tr>Off-plan ve ikincil konut yatırımlarında uzmanlaşmış, ROI ve risk odaklı düşünen bir yatırım profesyoneliyim. FX ve altın piyasalarındaki geçmişimi, kaynak bulmadan teslimata kadar tam döngü gayrimenkul deneyimiyle birleştiriyorum.</span>
+          <span data-en>An ROI- and risk-minded investment professional specializing in off-plan and secondary residential investments. I combine a background in FX and gold markets with full-cycle real estate experience — from sourcing to handover.</span>
+        </p>
+        <div class="hero-cta reveal">
+          <a href="#contact" class="btn primary">
+            <span data-tr>İletişime geç</span><span data-en>Get in touch</span>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 13L13 1M13 1H4M13 1V10" stroke="currentColor" stroke-width="1.5"/></svg>
+          </a>
+          <a href="#experience" class="btn ghost"><span data-tr>Deneyimi gör</span><span data-en>View experience</span></a>
+        </div>
+      </div>
+      <div class="portrait-frame reveal">
+        <span class="ring"></span>
+        <image-slot id="portrait" shape="rounded" radius="20" src="assets/portrait.webp" placeholder="Fotoğraf bırak / Drop photo" style="width: 260px; height: 406px"></image-slot>
+        <span class="portrait-cap">Dubai, UAE · ahmetsozturk.com</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">01</span>
+      <h2 class="sec-title"><span data-tr>Hakkımda</span><span data-en>About</span></h2>
+      <span class="sec-line"></span>
+    </div>
+    <div class="about-grid">
+      <div class="about-body reveal">
+        <p data-tr>Dubai, İstanbul ve Türkiye genelinde, <strong>Türkçe konuşan ve uluslararası yatırımcılar</strong> için off-plan ve ikincil konut satışına odaklanan, yatırım bakış açısına sahip bir gayrimenkul profesyoneliyim.</p>
+        <p data-tr>FX ve altın piyasalarındaki geçmişimi tam döngü işlem deneyimiyle — <strong>kaynak bulma, niteleme, müzakere ve teslimat</strong> — birleştirerek, yatırımcı odaklı mülk eşleştirmesine ROI ve risk temelli bir bakış getiriyorum.</p>
+        <p data-en>An investment-minded real estate professional focused on off-plan and secondary residential sales for <strong>Turkish-speaking and international investors</strong> across Dubai, Istanbul and Türkiye.</p>
+        <p data-en>I bring a background in FX and gold markets together with full-cycle transaction experience — <strong>sourcing, qualifying, negotiation and handover</strong> — to apply ROI- and risk-based framing to investor-focused property matching.</p>
+      </div>
+      <div class="reveal">
+        <div class="stat-card"><div class="num">10+</div><div class="lbl"><span data-tr>Yıl deneyim</span><span data-en>Years of experience</span></div></div>
+        <div class="stat-card"><div class="num">$26M+</div><div class="lbl"><span data-tr>Kümülatif satış (İşlemodası)</span><span data-en>Cumulative sales (Islemodasi)</span></div></div>
+        <div class="stat-card"><div class="num">3</div><div class="lbl"><span data-tr>Pazar · Dubai · İstanbul · Türkiye</span><span data-en>Markets · Dubai · Istanbul · Türkiye</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">02</span>
+      <h2 class="sec-title"><span data-tr>Deneyim</span><span data-en>Experience</span></h2>
+      <span class="sec-line"></span>
+    </div>
+    <div class="timeline">
+
+      <div class="job reveal">
+        <div class="job-when">Feb 2025 — <span class="now"><span data-tr>Şu an</span><span data-en>Present</span></span><br />Dubai, UAE</div>
+        <div>
+          <div class="job-role" style="font-family: &quot;Hanken Grotesk&quot;">NUUK</div>
+          <div class="job-co"><span data-tr>Kurucu</span><span data-en>Founder</span></div>
+
+          <div class="subrole">
+            <div class="subrole-title">
+              <span data-tr>Gayrimenkul Danışmanı</span><span data-en>Real Estate Advisor</span>
+              <span class="small"><span data-tr>D&amp;B Properties ortaklığı</span><span data-en>Partnership with D&amp;B Properties</span></span>
+            </div>
+            <p class="job-desc" data-tr>Türkçe konuşan ve uluslararası yatırımcıları Dubai'deki off-plan ve ikincil konut projeleriyle eşleştiriyorum. Müşteri görüşmeleri, viewing'ler, ROI/risk temelli değerlendirme, müzakere, booking ve MOU formları ile teslimat dahil tam işlem döngüsünü yönetiyorum. AI tabanlı mülk analizi ve ROI araçları (NUUK Reenove) ile kira getirisi, ödeme planı nakit akışı ve net ROI'yi modelliyorum. Property Finder, Bayut, Dubizzle ve doğrudan başvurulardan lead üretip dönüştürüyorum.</p>
+            <p class="job-desc" data-en>Source, qualify and match Turkish-speaking and international investors to Dubai off-plan and secondary residential properties. Manage the full transaction cycle: client meetings, viewings, ROI/risk-based deal framing, negotiation, booking forms and MOU, and handover. Build AI-driven property-analysis and ROI tools (NUUK Reenove) modeling rental yield, payment-plan cash flow and net ROI. Generate and convert leads from Property Finder, Bayut, Dubizzle and direct inquiries.</p>
+            <div class="job-tags">
+              <span class="tag">Off-Plan</span><span class="tag">ROI Advisory</span><span class="tag">Negotiation</span><span class="tag">Handover</span><span class="tag">NUUK Reenove</span>
+            </div>
+          </div>
+
+          <div class="subrole">
+            <div class="subrole-title">
+              <span>Quant / AI Trading</span>
+            </div>
+            <p class="job-desc" data-tr>Agresif getiri yerine düşük drawdown ve sermaye korumasını önceleyen, AI tabanlı çok varlıklı bir trading ve portföy yönetim sistemi tasarlıyorum. FX, altın ve diğer likit piyasalarda kural tabanlı yürütme ve risk kontrolleriyle algoritmik stratejiler geliştirip backtest ediyorum (MQL4/5, Pine Script). Pozisyon büyüklüğü, maruziyet limitleri ve drawdown eşikleriyle risk-ayarlı sermaye tahsisi uyguluyorum.</p>
+            <p class="job-desc" data-en>Design and develop an AI-driven, multi-asset trading and portfolio management system, prioritizing low drawdown and capital preservation over aggressive returns. Build and backtest algorithmic strategies across FX, gold and other liquid markets (MQL4/5, Pine Script), with rule-based execution and risk controls. Apply risk-adjusted capital allocation — position sizing, exposure limits and drawdown thresholds — across volatile market cycles.</p>
+            <div class="job-tags">
+              <span class="tag">FX &amp; Gold</span><span class="tag">MQL4/5</span><span class="tag">Pine Script</span><span class="tag">Risk Controls</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="job reveal">
+        <div class="job-when">Jun 2016 — Nov 2025<br />İstanbul, TR</div>
+        <div>
+          <div class="job-role"><span data-tr>ISLEMODASI</span><span data-en style="font-family: &quot;Hanken Grotesk&quot;">ISLEMODASI</span></div>
+          <div class="job-co">Founder</div>
+          <p class="job-desc" data-tr>Tüm satış döngüsü boyunca müşteri iletişimini yönettim; ihtiyaç analizi ve takipleri yürüttüm. Fiyatlandırma, müzakere ve karar süreçlerini destekleyerek müşterileri doğru tercihlere yönlendirdim. 8 yıl boyunca uzun vadeli, ilişki temelli müşteri portföyleri kurdum ve işi kümülatif olarak 26M USD'nin üzerinde satışa büyüttüm.</p>
+          <p class="job-desc" data-en>Managed client communication and conducted needs analysis and follow-ups across the full sales cycle. Supported pricing, negotiation and decision-making, advising clients toward fit-based purchases. Built long-term, relationship-driven client accounts over years and grew the business to over USD 26M in cumulative sales.</p>
+          <div class="job-tags">
+            <span class="tag">$26M+ Sales</span><span class="tag">Client Accounts</span><span class="tag">Negotiation</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">03</span>
+      <h2 class="sec-title"><span data-tr>Eğitim &amp; Diller</span><span data-en>Education &amp; Languages</span></h2>
+      <span class="sec-line"></span>
+    </div>
+    <div class="two-col">
+      <div class="reveal">
+        <h4 class="mono" style="margin-bottom:8px;"><span data-tr>Eğitim</span><span data-en>Education</span></h4>
+        <div class="edu-item">
+          <div class="edu-deg"><span data-tr>Uluslararası İşletme Yönetimi (Co-Op)</span><span data-en>International Business Administration (Co-Op)</span></div>
+          <div class="edu-school">Seneca College of Applied Arts and Technology</div>
+          <div class="edu-when">Toronto, CA · 2005 — 2008</div>
+        </div>
+      </div>
+      <div class="reveal">
+        <h4 class="mono" style="margin-bottom:8px;"><span data-tr>Diller</span><span data-en>Languages</span></h4>
+        <div class="cert-item">
+          <div><div class="cert-name">English</div><div class="cert-org"><span data-tr>Tam profesyonel</span><span data-en>Full Professional</span></div></div>
+          <div class="cert-yr">●●●●○</div>
+        </div>
+        <div class="cert-item">
+          <div><div class="cert-name">Türkçe</div><div class="cert-org"><span data-tr>Ana dil / İki dilli</span><span data-en>Native / Bilingual</span></div></div>
+          <div class="cert-yr">●●●●●</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">04</span>
+      <h2 class="sec-title"><span data-tr>Yetkinlikler</span><span data-en>Skills</span></h2>
+      <span class="sec-line"></span>
+    </div>
+    <div class="skill-groups reveal">
+      <div class="skill-col">
+        <h4><span data-tr>Gayrimenkul Satış</span><span data-en>Real Estate Sales</span></h4>
+        <ul>
+          <li><span data-tr>Off-plan &amp; ikincil konut</span><span data-en>Off-plan &amp; secondary residential</span></li>
+          <li><span data-tr>Yatırımcı odaklı eşleştirme</span><span data-en>Investor-focused matching</span></li>
+          <li><span data-tr>Müzakere &amp; kapanış</span><span data-en>Negotiation &amp; closing</span></li>
+          <li><span data-tr>Booking / MOU &amp; teslimat</span><span data-en>Booking / MOU &amp; handover</span></li>
+        </ul>
+      </div>
+      <div class="skill-col">
+        <h4><span data-tr>Yatırım &amp; FX</span><span data-en>Investment &amp; FX</span></h4>
+        <ul>
+          <li><span data-tr>ROI &amp; risk temelli danışmanlık</span><span data-en>ROI &amp; risk-based advisory</span></li>
+          <li><span data-tr>FX &amp; altın piyasa analizi</span><span data-en>FX &amp; gold market analysis</span></li>
+          <li><span data-tr>Risk-ayarlı sermaye tahsisi</span><span data-en>Risk-adjusted capital allocation</span></li>
+          <li>MQL4/5 · Pine Script</li>
+        </ul>
+      </div>
+      <div class="skill-col">
+        <h4><span data-tr>Müşteri &amp; Pazar</span><span data-en>Client &amp; Market</span></h4>
+        <ul>
+          <li><span data-tr>Yatırımcı niteleme &amp; takip</span><span data-en>Investor qualification &amp; follow-up</span></li>
+          <li><span data-tr>Fiyat karşılaştırma &amp; pazar araştırması</span><span data-en>Pricing comparison &amp; market research</span></li>
+          <li><span data-tr>Türk &amp; uluslararası yatırımcı ilişkileri</span><span data-en>Turkish &amp; international investor relations</span></li>
+        </ul>
+      </div>
+      <div class="skill-col">
+        <h4><span data-tr>AI &amp; Araçlar</span><span data-en>AI &amp; Tools</span></h4>
+        <ul>
+          <li><span data-tr>AI tabanlı ROI / mülk analitiği</span><span data-en>AI-driven ROI / property analytics</span></li>
+          <li>Property Finder · Bayut · Dubizzle</li>
+          <li>CRM · Excel · Google Sheets</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">05</span>
+      <h2 class="sec-title"><span data-tr>Öne Çıkan Projeler</span><span data-en>Selected Projects</span></h2>
+      <span class="sec-line"></span>
+    </div>
+    <div class="proj-grid">
+      <div class="proj-card reveal">
+        <div class="proj-kicker">
+          <span class="idx">P/01</span>
+          <span class="arrow"><svg width="16" height="16" viewBox="0 0 14 14" fill="none"><path d="M1 13L13 1M13 1H4M13 1V10" stroke="currentColor" stroke-width="1.5"/></svg></span>
+        </div>
+        <div class="proj-name">NUUK Reenove</div>
+        <p class="proj-desc" data-tr>Kira getirisi, ödeme planı nakit akışı, değer artışı ve net ROI'yi modelleyen AI tabanlı mülk analizi ve yatırım karar aracı.</p>
+        <p class="proj-desc" data-en>AI-driven property-analysis and ROI tool modeling rental yield, payment-plan cash flow, capital appreciation and net ROI.</p>
+        <div class="proj-meta">2025 · NUUK</div>
+      </div>
+      <div class="proj-card reveal">
+        <div class="proj-kicker">
+          <span class="idx">P/02</span>
+          <span class="arrow"><svg width="16" height="16" viewBox="0 0 14 14" fill="none"><path d="M1 13L13 1M13 1H4M13 1V10" stroke="currentColor" stroke-width="1.5"/></svg></span>
+        </div>
+        <div class="proj-name"><span data-tr>AI Trading Sistemi</span><span data-en>AI Trading System</span></div>
+        <p class="proj-desc" data-tr>Düşük drawdown ve sermaye korumasını önceleyen, FX ve altın piyasalarında algoritmik strateji geliştirme ve backtest altyapısı.</p>
+        <p class="proj-desc" data-en>Multi-asset algorithmic trading framework across FX and gold, prioritizing low drawdown and capital preservation.</p>
+        <div class="proj-meta">MQL4/5 · Pine Script</div>
+      </div>
+      <div class="proj-card reveal">
+        <div class="proj-kicker">
+          <span class="idx">P/03</span>
+          <span class="arrow"><svg width="16" height="16" viewBox="0 0 14 14" fill="none"><path d="M1 13L13 1M13 1H4M13 1V10" stroke="currentColor" stroke-width="1.5"/></svg></span>
+        </div>
+        <div class="proj-name"><span data-tr>ISLEMODASI — $26M+ Satış</span><span data-en>ISLEMODASI — $26M+ Sales</span></div>
+        <p class="proj-desc" data-tr>8 yılda kurup büyüttüğüm, ilişki temelli müşteri portföyüyle kümülatif 26M USD'nin üzerinde satışa ulaşan iş.</p>
+        <p class="proj-desc" data-en>A relationship-driven business I built over years, reaching over USD 26M in cumulative sales.</p>
+        <div class="proj-meta">2016–2025 · İstanbul</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">06</span>
+      <h2 class="sec-title"><span data-tr>İletişim</span><span data-en>Contact</span></h2>
+      <span class="sec-line"></span>
+    </div>
+    <div class="contact-grid">
+      <div class="reveal">
+        <p class="contact-lead" style="font-size: 40px">
+          <span data-tr>Bir sonraki projeyi <span class="accent">konuşalım.</span></span>
+          <span data-en>Let's talk about <span class="accent">what's next.</span></span>
+        </p>
+      </div>
+      <div class="contact-list reveal">
+        <a class="contact-row" href="mailto:ahmetsahinozturk@hotmail.com">
+          <span class="k">Email</span><span class="v">ahmetsahinozturk@hotmail.com</span>
+        </a>
+        <a class="contact-row" href="https://www.linkedin.com/in/ahmetsozturk/" target="_blank" rel="noopener">
+          <span class="k">LinkedIn</span><span class="v">/in/ahmetsozturk</span>
+        </a>
+        <a class="contact-row" href="tel:+971586884464">
+          <span class="k"><span data-tr>Telefon</span><span data-en>Phone</span></span><span class="v">+971 58 688 4464</span>
+        </a>
+        <div class="contact-row">
+          <span class="k"><span data-tr>Konum</span><span data-en>Location</span></span><span class="v">Dubai, UAE</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <footer>
+      <div class="foot-inner">
+        <span>© 2026 Ahmet S. Ozturk</span>
+        <span>Dubai, UAE · Real Estate &amp; Trading</span>
+      </div>
+    </footer>
+  </div>
+</section>
+
+<script>
+  // language toggle
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    document.getElementById('lang-tr').classList.toggle('active', lang === 'tr');
+    document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+    try { localStorage.setItem('cv-lang', lang); } catch (e) {}
+  }
+  (function () {
+    let saved = 'tr';
+    try { saved = localStorage.getItem('cv-lang') || 'tr'; } catch (e) {}
+    setLang(saved);
+  })();
+
+  // nav border on scroll
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 24);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // reveal: pure CSS animation auto-plays; here we only add a gentle per-group stagger.
+  // Content is visible regardless of JS — the animation uses fill-mode "both".
+  document.querySelectorAll('.reveal').forEach((el, i) => {
+    el.style.animationDelay = (Math.min(i, 6) * 0.07) + 's';
+  });
+</script>
+
+</body>
+</html>
