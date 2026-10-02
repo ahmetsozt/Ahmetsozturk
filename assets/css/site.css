@@ -58,12 +58,12 @@ h1 em{font-style:italic;font-weight:300;color:var(--blue)}
 .cta{display:flex;flex-wrap:wrap;gap:12px}
 
 .arch{position:relative;justify-self:end;width:min(100%,400px);aspect-ratio:4/5;margin:0 0 18px 18px}
-.arch-ring{position:absolute;inset:0;transform:translate(-18px,18px);background:var(--ink);border-radius:6px}
+.arch-ring{position:absolute;inset:0;transform:translate(-18px,18px);background:linear-gradient(135deg,var(--blue),#0a2a6e);border-radius:6px}
 .arch-ring::after{content:"";position:absolute;left:14px;bottom:14px;width:34px;height:34px;border-left:2px solid var(--cyan);border-bottom:2px solid var(--cyan)}
-.arch-clip{position:absolute;inset:0;border-radius:6px;overflow:hidden;background:linear-gradient(180deg,#e6edf9,#cfdcf3);box-shadow:0 30px 60px rgb(12 18 35 / .25)}
+.arch-clip{position:absolute;inset:0;border-radius:6px;overflow:hidden;background:#05070f;box-shadow:0 30px 60px rgb(12 18 35 / .25)}
 .arch-clip::before{content:"";position:absolute;right:14px;top:14px;width:34px;height:34px;border-right:2px solid var(--blue);border-top:2px solid var(--blue);z-index:2}
-.arch-clip canvas{position:absolute;left:0;bottom:0;width:100%;height:40%;opacity:.45}
-.arch-clip img.me{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 10%;mix-blend-mode:multiply}
+.arch-clip canvas{display:none}
+.arch-clip img.me{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%}
 .tag{position:absolute;z-index:2;background:var(--ink);color:#fff;border-radius:14px;padding:11px 15px;font-size:12.5px;line-height:1.35;box-shadow:0 14px 34px rgb(12 18 35 / .3)}
 .tag b{display:block;font:600 15px var(--serif)}
 .tag.a{left:-48px;bottom:60px}.tag.b{right:-14px;top:9%}
