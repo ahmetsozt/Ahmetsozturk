@@ -57,15 +57,15 @@ h1 em{font-style:italic;font-weight:300;color:var(--blue)}
 .lead{font-size:clamp(16px,1.6vw,18.5px);color:var(--ink-2);max-width:54ch;margin-bottom:32px}
 .cta{display:flex;flex-wrap:wrap;gap:12px}
 
-.arch{position:relative;justify-self:end;width:min(100%,430px);aspect-ratio:4/5.2}
-.arch-clip{position:absolute;inset:0;border-radius:999px 999px 22px 22px;overflow:hidden;background:linear-gradient(180deg,#dfe8f7,#c5d6f2);box-shadow:0 40px 80px rgb(12 18 35 / .22)}
+.arch{position:relative;justify-self:end;width:min(100%,430px);aspect-ratio:1/1.06}
+.arch-clip{position:absolute;inset:0;border-radius:26px;overflow:hidden;background:linear-gradient(160deg,#e9eff9,#c9d9f3);box-shadow:0 40px 80px rgb(12 18 35 / .22)}
 .arch-clip img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.32;mix-blend-mode:multiply;filter:saturate(.7)}
-.arch-clip canvas{position:absolute;inset:0;width:100%;height:100%;opacity:.55}
-.arch-clip img.me{position:absolute;left:50%;bottom:0;width:100%;height:auto;transform:translateX(-50%);mix-blend-mode:multiply}
-.arch-ring{position:absolute;inset:-12px;border:1px solid var(--line);border-radius:999px 999px 30px 30px;pointer-events:none}
+.arch-clip canvas{position:absolute;left:0;bottom:0;width:100%;height:42%;opacity:.5}
+.arch-clip img.me{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 8%;mix-blend-mode:multiply}
+.arch-ring{position:absolute;inset:0;transform:translate(16px,16px);border:2px solid var(--blue);border-radius:26px;opacity:.55;pointer-events:none}
 .tag{position:absolute;z-index:2;background:var(--ink);color:#fff;border-radius:14px;padding:11px 15px;font-size:12.5px;line-height:1.35;box-shadow:0 14px 34px rgb(12 18 35 / .3)}
 .tag b{display:block;font:600 15px var(--serif)}
-.tag.a{left:-34px;bottom:70px}.tag.b{right:-18px;top:30%}
+.tag.a{left:-30px;bottom:34px}.tag.b{right:-14px;top:9%}
 
 .stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:72px;border-top:1px solid var(--ink)}
 .stat{padding:26px 22px 28px 0}
